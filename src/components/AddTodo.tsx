@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent, FC } from "react";
-import { Todo } from "./models/todo";
+import { Todo } from "../models/todo";
 
 interface Props {
   todos: Todo[];
@@ -18,9 +18,15 @@ const AddTodo: FC<Props> = ({ todos, setTodos }) => {
     const newTask: Todo = {
       id: `${input}${Math.random() * 1000}`,
       text: input,
+      completed: false,
     };
-    setTodos([newTask, ...todos]);
-    setInput("");
+
+    if (input.length === 0) {
+      return;
+    } else {
+      setTodos([newTask, ...todos]);
+      setInput("");
+    }
   };
 
   return (
