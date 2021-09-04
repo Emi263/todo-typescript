@@ -5,12 +5,14 @@ interface Props {
   items: Todo[];
   handleDelete(text: string): void;
   handleComplete(id: string): void;
+  handleUpdate(id: string): void;
 }
 
 const SingleTodo: React.FC<Props> = ({
   items,
   handleComplete,
   handleDelete,
+  handleUpdate,
 }) => {
   return (
     <div>
@@ -22,6 +24,9 @@ const SingleTodo: React.FC<Props> = ({
           </span>
           <span onClick={() => handleComplete(item.id)}>
             <i className="fas fa-check-circle"></i>
+          </span>
+          <span onClick={() => handleUpdate(item.id)}>
+            <i className="fas fa-edit"></i>
           </span>
         </li>
       ))}

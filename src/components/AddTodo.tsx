@@ -4,13 +4,24 @@ import { Todo } from "../models/todo";
 interface Props {
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
+  updateValue: string;
+  setElementToUpdate: (el: string) => void;
+  editButton: (e: ChangeEvent<HTMLFormElement>) => void;
+  updating: boolean;
 }
 
-const AddTodo: FC<Props> = ({ todos, setTodos }) => {
+const AddTodo: FC<Props> = ({
+  todos,
+  setTodos,
+  updateValue,
+  setElementToUpdate,
+  updating,
+  editButton,
+}) => {
   const [input, setInput] = useState<string>("");
   const handleInput = (e: ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
-    setInput(e.target.value);
+    !updating ? setInput(e.target.value) : setElementToUpdate(e.target.value);
   };
 
   const handleEvent = (e: FormEvent) => {
@@ -31,9 +42,13 @@ const AddTodo: FC<Props> = ({ todos, setTodos }) => {
 
   return (
     <div>
-      <form onSubmit={handleEvent}>
-        <input type="text" onChange={handleInput} value={input} />
-        <button type="submit">Add todo</button>
+      <form onSubmit={updating ? editButton : handleEvent}>
+        <input
+          type="text"
+          onChange={handleInput}
+          value={!updating ? input : updateValue}
+        />
+        <button type="submit">{!updating ? "Add todo" : "Update"} </button>
       </form>
     </div>
   );
