@@ -14,17 +14,16 @@ const TodoList: FC<Props> = ({
   handleComplete,
   handleUpdate,
 }) => {
-  //FC: acts like a functional component,
-  //in angle brackets <{}> our own props. It adds our props to FC props (children)
-
   return (
     <div className="Todos">
-      <SingleTodo
-        items={items}
-        handleDelete={handleDelete}
-        handleComplete={handleComplete}
-        handleUpdate={handleUpdate}
-      />
+      {items && (
+        <SingleTodo
+          items={items}
+          handleDelete={handleDelete}
+          handleComplete={handleComplete}
+          handleUpdate={handleUpdate}
+        />
+      )}
     </div>
   );
 };

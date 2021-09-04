@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent, FC } from "react";
 import { Todo } from "../models/todo";
 
 interface Props {
+  //PROPS OF ADD TODO
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
   updateValue: string;
@@ -18,12 +19,13 @@ const AddTodo: FC<Props> = ({
   updating,
   editButton,
 }) => {
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState<string>(""); //VALUE OF INPUT, 2-WAY BINDING
   const handleInput = (e: ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     !updating ? setInput(e.target.value) : setElementToUpdate(e.target.value);
   };
 
+  //HANDLE SUBMIT EVENT: ADD TODO
   const handleEvent = (e: FormEvent) => {
     e.preventDefault();
     const newTask: Todo = {
