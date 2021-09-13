@@ -15,22 +15,24 @@ const SingleTodo: React.FC<Props> = ({
   handleUpdate,
 }) => {
   return (
-    <div>
+    <ul>
       {items.map((item) => (
         <li className={`${item.completed ? "completed" : ""}`} key={item.id}>
-          {item.text}{" "}
-          <span onClick={() => handleDelete(item.id)}>
-            <i className="fas fa-trash-alt"></i>
-          </span>
-          <span onClick={() => handleComplete(item.id)}>
-            <i className="fas fa-check-circle"></i>
-          </span>
-          <span onClick={() => handleUpdate(item.id)}>
-            <i className="fas fa-edit"></i>
-          </span>
+          <div className="text">{item.text} </div>
+          <div className="icons">
+            <span onClick={() => handleDelete(item.id)}>
+              <i className="fas fa-trash-alt"></i>
+            </span>
+            <span onClick={() => handleComplete(item.id)}>
+              <i className="fas fa-check-circle"></i>
+            </span>
+            <span onClick={() => handleUpdate(item.id)}>
+              <i className="fas fa-edit"></i>
+            </span>
+          </div>
         </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
