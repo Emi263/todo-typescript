@@ -1,0 +1,156 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  position: relative;
+  width: 100%;
+}
+form {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+form input {
+  color: white;
+  width: 60%;
+  max-width: 500px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid rgb(8, 24, 255);
+  padding: 1rem 2rem;
+  font-size: 17px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(0, 27, 109);
+}
+form input::placeholder {
+  color: aquamarine;
+  font-size: 15px;
+}
+form button {
+  padding: 0.8rem;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  border: 2px solid purple;
+  font-size: 16px;
+  transition: 0.3 ease-in;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form button:hover {
+  background-color: purple;
+  color: white;
+}
+.imgDiv {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gif {
+  position: relative;
+  max-width: 100%;
+  width: 350px;
+  margin: auto;
+}
+
+.Todos {
+  position: relative;
+  width: 100%;
+}
+ul {
+  padding: 1rem;
+}
+ul li {
+  overflow: hidden;
+  word-wrap: break-word;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  background: linear-gradient(90deg, rgb(250, 114, 3) 0%, rgb(192, 0, 0) 100%);
+}
+
+ul li:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+ul li:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+ul li:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.text {
+  flex: 0.65;
+
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.icons {
+  display: flex;
+  gap: 1rem;
+  flex: 0.35;
+  align-items: center;
+}
+
+.icons span {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s ease-in;
+}
+.icons span:hover {
+  color: rgb(255, 251, 4);
+}
+h5 {
+  text-align: center;
+  padding: 20px;
+  font-family: monospace;
+}
+
+h1.completed {
+  text-align: center;
+  font-family: monospace;
+  padding: 1rem;
+}
+h4 {
+  font-family: monospace;
+  text-align: center;
+  padding: 1rem;
+  font-size: 16px;
+}
+
+li.completed {
+  text-decoration: line-through;
+}
